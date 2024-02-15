@@ -15,7 +15,12 @@ import 'dart:io';
 
     do{
       print("${main_menu}");
-      choice = int.parse(stdin.readLineSync()!);
+      try{
+        choice = int.parse(stdin.readLineSync()!);
+      }
+      catch(e){
+        print("Error:only integer input allowed.");
+      };
       if(!(0<choice || choice>5)){
         print("Wrong Entry. Please enter a valid option.");
       }
@@ -51,13 +56,19 @@ import 'dart:io';
     print("------------------------------------");
   }
   void updateNote(){
+    int i = 0;
     if(notes.isEmpty){
       print("No notes to update.");
       print("------------------------------------");
     }
     else{
       print("Enter index of the note to be updated:");
-      int i = int.parse(stdin.readLineSync()!);
+      try{
+        i = int.parse(stdin.readLineSync()!);
+      }
+      catch(e){
+        print("Error:only integer input allowed.");
+      };
       if (i< 0 || i >= notes.length){
         print("invalid index: index is not within available range.");
         print("------------------------------------");
@@ -74,13 +85,19 @@ import 'dart:io';
   }
 
   void deleteNote(){
+    int i = 0;
     if(notes.isEmpty){
       print("No notes to delete.");
       print("------------------------------------");
     }
     else{
       print("Enter index of the note to be deleted:");
-      int i = int.parse(stdin.readLineSync()!);
+      try{
+        i = int.parse(stdin.readLineSync()!);
+      }
+      catch(e){
+        print("Error:only integer input allowed.");
+      };
       if (i< 0 || i >= notes.length){
         print("invalid index: index is not within available range.");
         print("------------------------------------");
