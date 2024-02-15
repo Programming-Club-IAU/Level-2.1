@@ -9,10 +9,11 @@ class Note {
     required this.content,
   });
 }
-
+//Manage operation of program (create,edit,delete,search,display).
 class NoteManager {
   List<Note> notes = [];
 
+//Creates a new note and adds it to the list of notes.
   void createNote() {
     String title, content;
 
@@ -41,6 +42,7 @@ class NoteManager {
     print("The note is successfully created!\n");
   }
 
+//Display all notes of the list. 
   void displayNote() {
     if (notes.isEmpty) {
       print("Nothing to display!");
@@ -51,6 +53,7 @@ class NoteManager {
     }
   }
 
+ //Edit the title and content of note. 
   void editNote() {
     if (notes.isEmpty) {
       print("Nothing to edit!");
@@ -73,6 +76,7 @@ class NoteManager {
     print("Note with title '$newTitle' not found\n ");
   }
 
+ //Delete specific note of the list.
   void deleteNote() {
     if (notes.isEmpty) {
       print("Nothing to delete!");
@@ -93,6 +97,7 @@ class NoteManager {
     }
   }
 
+//Search about specific note by title or content of note.
   void searchNote() {
     if (notes.isEmpty) {
       print("Not found!");
@@ -116,7 +121,7 @@ class NoteManager {
     }
   }
 }
-
+//Note project
 void main(List<String> args) {
   NoteManager userMenu = new NoteManager();
 
