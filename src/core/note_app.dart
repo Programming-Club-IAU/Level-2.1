@@ -1,15 +1,8 @@
 class NoteApp{
-  String? note;
+  String? content;
   String? title;
-
   NoteApp({
-    this.note,
-    this.title,
+    required this.content,
+    required this.title,
   });
-
-  void display(){
-    print("title: ${title}");
-    print("${note}");
-  }
-
 }
