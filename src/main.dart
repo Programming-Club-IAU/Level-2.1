@@ -30,7 +30,7 @@ void main(List<String> args) {
   } while (choice != 5);
 }
 
-void Menu() { // function to pront the menue
+void Menu() { // print the menue
   stdout.write("\n\n\t********************Note Taking App********************\n\n" +
             "\t\t1- Create new note\n\t\t2- Edit a note\n\t\t3- Delete a note\n\t\t"
             +"4- Search for a note\n\t\t5- Exit\n\t\tYour Choice: ");

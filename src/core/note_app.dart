@@ -24,7 +24,7 @@ class NoteApp {
 
   static void displayNotes() { //print the notes
     if(notes.isEmpty){
-      print("\n\n~There are no notes to display.");
+      print("\n\n\t\t~There are no notes to display.");
     }else{
     int i = 0;
     print("\n\t\t-------------------Notes List-------------------");
