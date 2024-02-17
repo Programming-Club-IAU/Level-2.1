@@ -1,22 +1,26 @@
+//Note taking app with all CRUD  operations
+//importing the class and io library for input
 import 'core/note_app.dart';
 import 'dart:io';
-  List<NoteApp> notes = [];
+  List<NoteApp> notes = []; //class arraylist for flexable size
   void main() {
-    int choice = 0;
+    int choice = 0; // intializing variable choice with 0
     
+    //String to display menu item
     String main_menu="""
       1- Create a note 
       2- Edit a note
       3- Delete a note 
-      4- view notes
+      4- View notes
       5- Exit
                                   
       Your Choice: """ ;
 
+//do while loop which enables continuous operation and halts when user enter 5 
     do{
       print("${main_menu}");
       try{
-        choice = int.parse(stdin.readLineSync()!);
+        choice = int.parse(stdin.readLineSync()!);//try-catch and integer parse to ensure correct user entry
       }
       catch(handleFormatError){
         print("Error:only integer input allowed.");
@@ -24,6 +28,7 @@ import 'dart:io';
       if(!(0<choice || choice>5)){
         print("Wrong Entry. Please enter a valid option.");
       }
+      //switch statement with all the available operations
       else{
         switch(choice){
         case 1: createNote();
@@ -41,6 +46,7 @@ import 'dart:io';
       }
     } while(choice != 5);
   }
+  //creating a note with its title and content and null safety feature 
   void createNote(){
     String? title;
     String? content;
@@ -55,6 +61,7 @@ import 'dart:io';
     print("Note saved.");
     print("------------------------------------");
   }
+  //updating a note with new title and content 
   void updateNote(){
     int i;
     if(notes.isEmpty){
@@ -84,7 +91,7 @@ import 'dart:io';
       }
     }
   }
-
+//deleteing a note using its specific index  
   void deleteNote(){
     int i = 0;
     if(notes.isEmpty){
@@ -110,7 +117,7 @@ import 'dart:io';
       }
     }
   }
-
+//displaying all the saved notes if any are saved
   void viewNotes(){
     int i;
     if(notes.isEmpty){

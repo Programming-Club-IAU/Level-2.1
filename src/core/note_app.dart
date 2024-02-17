@@ -1,3 +1,4 @@
+//NoteApp class with all variables
 class NoteApp{
   String? content;
   String? title;
