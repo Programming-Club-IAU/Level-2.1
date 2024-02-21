@@ -1,6 +1,9 @@
-class NoteApp {
-  // TODO: Complete the run function
-  void run() {
-    print('Hello, world!');
-  }
+class Note {
+  late String title;
+  late String content;
+
+  Note({
+    required this.title,
+    required this.content,
+  });
 }
